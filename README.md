@@ -1,2 +1,2 @@
 # brahma
-brahma repository
+brahma repository validate
