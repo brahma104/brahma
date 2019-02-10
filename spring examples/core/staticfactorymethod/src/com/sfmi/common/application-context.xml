@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="reminder" class="com.sfmi.beans.Reminder">
+		<property name="notes"
+			value="Architectural Design Discussion" />
+		<property name="schedule" ref="scheduleTime" />
+		<property name="snooze" value="true" />
+	</bean>
+	<bean id="scheduleTime" class="java.util.Calendar"
+		factory-method="getInstance" />
+
+</beans>

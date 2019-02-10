@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table-filter match-name="blocks" match-catalog="apnacomplexdb"></table-filter>
+	<table-filter match-name="complaints"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="flats" match-catalog="apnacomplexdb"></table-filter>
+	<table-filter match-name="maintainance"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="member_responsibilities"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="notification"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="owners" match-catalog="apnacomplexdb"></table-filter>
+	<table-filter match-name="parking" match-catalog="apnacomplexdb"></table-filter>
+	<table-filter match-name="resident_members"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="residents"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="society" match-catalog="apnacomplexdb"></table-filter>
+	<table-filter match-name="society_members"
+		match-catalog="apnacomplexdb">
+	</table-filter>
+	<table-filter match-name="staff" match-catalog="apnacomplexdb"></table-filter>
+	<table-filter match-name="vehicle" match-catalog="apnacomplexdb"></table-filter>
+</hibernate-reverse-engineering>

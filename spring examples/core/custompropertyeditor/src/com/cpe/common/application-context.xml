@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="address" class="com.cpe.beans.Address">
+		<property name="building" value="Cyber Towers" />
+		<property name="street" value="Madhapur" />
+		<property name="city" value="Hyderabad" />
+		<property name="state" value="TS" />
+		<property name="zip" value="9304" />
+		<property name="country" value="India" />
+		<property name="geoLocation" value="123:49" />
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<super-market xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bigbazar.com/shopping/types file:///D:/work/master/webservices/20180125/Xml/xsd/namespaces/import/supermarket.xsd" xmlns="http://bigbazar.com/shopping/types" xmlns:kf="http://karvy.com/finance/types">
+	<super-market-name>big bazar</super-market-name>
+	<branch>ameerpet</branch>
+	<order-no>or</order-no>
+	<ordered-date>2018-02-03</ordered-date>
+	<basket>
+		<product>
+			<product-code></product-code>
+			<quantity>24</quantity>
+			<product-type></product-type>
+		</product>
+	</basket>
+	<kf:bill>
+		<kf:bill-no></kf:bill-no>
+		<kf:bill-date>2018-01-01</kf:bill-date>
+		<kf:amount>25</kf:amount>
+	</kf:bill>
+</super-market>

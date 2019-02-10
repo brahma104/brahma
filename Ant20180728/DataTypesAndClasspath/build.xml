@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="DataTypesAndClasspath" basedir="." default="init">
+	<property file="common.properties" />
+	<property file="build.properties" />
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${dist.dir}${file.separator}${ant.project.name}.jar"/>
+	</path>
+	<target name="init" depends="clean,mkdirs,compile,package,run">
+	</target>
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+	<target name="mkdirs">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" />
+		<copy todir="${classes.dir}">
+			<fileset dir="${src.dir}">
+				<include name="*.properties" />
+			</fileset>
+			<filterset begintoken="#{" endtoken="}" filtersfile="build.properties">
+			</filterset>
+		</copy>
+	</target>
+
+	<target name="package">
+		<jar destfile="${dist.dir}${file.separator}${ant.project.name}.jar" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="com.udyog.test.SkillTest"/>
+				<attribute name="Class-Path" value="${lib.dir}"/>
+					
+			</manifest>
+		</jar>
+	</target>
+	<target name="run">
+		<java jar="${dist.dir}${file.separator}${ant.project.name}.jar" fork="true"/>
+	</target>
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE purchaseOrder SYSTEM "D:\work\master\webservices\20180125\Xml\po.dtd">
+<purchaseOrder>
+	<orderItems>
+		<item>
+			<itemCode>ic738</itemCode>
+			<quantity>abc</quantity>
+		</item>
+		<item>
+			<itemCode>ic928</itemCode>
+			<quantity>20</quantity>
+		</item>
+	</orderItems>
+	<shippingAddress addressType="permanent">
+		<addressLine1 landmark="near ameerpet x-roads">505, 5th floor</addressLine1>
+		<addressLine2>Ameerpet X Roads</addressLine2>
+		<city>Hyderabad</city>
+		<state>TS</state>
+		<zip>500072</zip>
+		<country>India</country>
+	</shippingAddress>
+</purchaseOrder>

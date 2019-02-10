@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="errors" />
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/add-medicine.htm">addMedicineFormController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="addMedicineFormController"
+		class="com.apollostore.controller.AddMedicineFormController">
+		<property name="formView" value="add-medicine" />
+		<property name="commandClass"
+			value="com.apollostore.command.AddMedicineCommand" />
+		<property name="validator" ref="addMedicineValidator" />
+		<property name="commandName" value="addMedicineCommand" />
+	</bean>
+
+	<bean id="addMedicineValidator"
+		class="com.apollostore.validator.AddMedicineValidator" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

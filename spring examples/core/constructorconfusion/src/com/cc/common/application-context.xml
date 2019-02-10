@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="account" class="com.cc.beans.Account">
+		<constructor-arg value="1098" type="int" />
+	</bean>
+
+	<bean id="product" class="com.cc.beans.Product">
+		<constructor-arg value="Refrigerator" index="1" />
+		<constructor-arg value="39" />
+	</bean>
+
+	<bean id="project" class="com.cc.beans.Project">
+		<constructor-arg value="Resource Management System" name="title"/>
+		<constructor-arg value="4945" name="projectNo"/>
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="trip">
+		<xs:complexType>
+			<xs:sequence>	
+				<xs:element name="booking-no" type="xs:string"/>
+				<xs:element name="trip-date" type="xs:date"/>
+				<xs:element name="duration" type="xs:string"/>
+				<xs:element name="package-name" type="xs:string"/>
+				<xs:element name="amount" type="xs:float"/>
+				<xs:element name="itenary">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="visit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="day" type="xs:int"/>
+										<xs:element name="place" type="xs:string"/>
+										<xs:element name="description" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="includes" type="xs:string"/>
+				<xs:element name="terms-and-conditions" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

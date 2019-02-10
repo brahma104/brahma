@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.fireweb.org/web2/config"
+	xmlns:fw2c="http://www.fireweb.org/web2/config"
+	elementFormDefault="qualified">
+
+	<xs:element name="fireweb2config" type="fw2c:fireweb2config" />
+
+	<xs:complexType name="fireweb2config">
+		<xs:sequence>
+			<xs:element name="handler-mapping"
+				type="fw2c:handler-mapping" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="handler-mapping">
+		<xs:sequence>
+			<xs:element name="handlers" type="fw2c:handler"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="handler">
+		<xs:sequence>
+			<xs:element name="forwards" type="fw2c:forward"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="path" type="xs:string" use="required" />
+		<xs:attribute name="handlerClass" type="xs:string"
+			use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="forward">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="forwardName" type="xs:string"
+					use="required" />
+				<xs:attribute name="page" type="xs:string"
+					use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+</xs:schema>

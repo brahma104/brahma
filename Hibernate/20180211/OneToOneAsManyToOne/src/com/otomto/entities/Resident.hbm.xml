@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otomto.entities">
+	<class name="Resident" table="resident">
+		<id name="residentNo" column="resident_no">
+			<generator class="increment" />
+		</id>
+		<property name="residentFirstName" column="resident_first_nm" />
+		<property name="residentLastName" column="resident_last_nm" />
+		<property name="mobile" column="mobile_nbr" />
+		<property name="emailAddress" column="email_address" />
+		<many-to-one name="flat" class="Flat" column="flat_no"
+			unique="true" fetch="join" not-null="true"/>
+	</class>
+</hibernate-mapping>

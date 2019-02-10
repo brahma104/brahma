@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-rpc/ri/runtime' version='1.0'>
+  <endpoint
+    name='FundsTransfer'
+    interface='com.axisbank.netbanking.service.FundsTransfer'
+    implementation='com.axisbank.netbanking.service.FundsTransferImpl'
+    tie='com.axisbank.netbanking.service.FundsTransfer_Tie'
+    model='/WEB-INF/axisbank-rpc-enc.xml.gz'
+    wsdl='/WEB-INF/rbiGateway.wsdl'
+    service='{http://axisbank.com/netbanking/service}rbiGatewayService'
+    port='{http://axisbank.com/netbanking/service}fundsTransferSOAPPort'
+    urlpattern='/rbiGateway'/>
+</endpoints>

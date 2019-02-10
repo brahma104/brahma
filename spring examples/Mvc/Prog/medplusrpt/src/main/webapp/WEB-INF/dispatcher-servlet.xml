@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="errors" />
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/statement.htm">bankStatementFormController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="bankStatementFormController"
+		class="com.medplusrpt.controller.BankStatementFormController">
+		<property name="formView" value="bank-statement" />
+		<property name="commandClass"
+			value="com.medplusrpt.command.BankStatementCommand" />
+		<property name="commandName" value="bankStatement" />
+		<property name="validator"
+			ref="bankStatementCommandValidator" />
+	</bean>
+
+	<bean id="bankStatementCommandValidator"
+		class="com.medplusrpt.validator.BankStatementCommandValidator" />
+
+	<!-- <bean
+		class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename" value="views" />
+		<property name="order" value="1" />
+	</bean> -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1"/>
+	</bean>
+	<bean id="bank-statement-pdf" class="com.medplusrpt.view.BankStatementPdfView"/>
+	<bean id="bank-statement-xls"  class="com.medplusrpt.view.BankStatementXlsView"/>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="2" />
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.idg.entities">
+	<class name="ServiceRequest" table="service_request">
+		<id name="serviceRequestNo" column="service_request_no">
+			<generator class="select">
+				<param name="key">uniqueProductCode</param>
+			</generator>
+		</id>
+		<property name="uniqueProductCode" column="unique_product_code" />
+		<property name="description" />
+		<property name="problem" />
+		<property name="estimatedDeliveryDate" column="estimated_delivery_date" />
+		<property name="estimatedAmount" column="estimated_amount" />
+		<property name="status" />
+	</class>
+</hibernate-mapping>

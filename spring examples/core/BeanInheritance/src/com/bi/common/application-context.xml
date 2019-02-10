@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="car1" class="com.bi.beans.Car" abstract="true">
+		<constructor-arg name="carNo" value="1" />
+		<constructor-arg name="model" value="Swift" />
+		<constructor-arg name="manufacturer" value="Maruti Suzki" />
+		<constructor-arg name="color" value="Red" />
+		<constructor-arg name="fuelType" value="diesel" />
+		<constructor-arg name="mileage" value="20" />
+		<constructor-arg name="price" value="700000" />
+	</bean>
+
+	<bean id="car2" class="com.bi.beans.Car" parent="car1">
+		<constructor-arg name="carNo" value="2" />
+		<constructor-arg name="color" value="White" />
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

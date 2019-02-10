@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/work/master/webservices/20180125/Xml/xsd/trip.xsd">
+	<booking-no>b349</booking-no>
+	<trip-date>2018-03-25</trip-date>
+	<duration>4 days and 5 nights</duration>
+	<package-name>Himachal Pradesh Package</package-name>
+	<amount>9384</amount>
+	<itenary>
+		<visit>
+			<day>1</day>
+			<place>Shimla</place>
+			<description>Hills</description>
+		</visit>
+	</itenary>
+	<includes>flight and hotel stay</includes>
+	<terms-and-conditions>No cancellation</terms-and-conditions>
+</trip>

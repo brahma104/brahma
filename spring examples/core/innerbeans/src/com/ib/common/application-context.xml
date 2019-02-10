@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="biCycle" class="com.ib.beans.BiCycle">
+		<property name="biCycleNo" value="1" />
+		<property name="manufacturer" value="Atlas" />
+		<property name="chain">
+			<bean class="com.ib.beans.Chain">
+				<property name="chainNo" value="1" />
+				<property name="chainType" value="Metal" />
+				<property name="length" value="200" />
+			</bean>
+		</property>
+	</bean>
+
+</beans>

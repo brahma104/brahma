@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bseStockExchangeServiceLocator"
+		class="com.icicidirect.helper.BSEStockExchangeServiceLocator" />
+	<bean id="stockManager"
+		factory-bean="bseStockExchangeServiceLocator"
+		factory-method="locateStockManager" />
+
+	<bean id="stockHandler"
+		class="com.icicidirect.handler.StockHandler">
+		<property name="stockManager" ref="stockManager" />
+	</bean>
+</beans>

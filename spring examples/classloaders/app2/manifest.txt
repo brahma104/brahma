@@ -1,0 +1,3 @@
+Main-Class: pkg1.A
+Class-Path: app2.jar
+

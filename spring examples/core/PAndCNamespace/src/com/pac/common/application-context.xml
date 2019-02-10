@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="geoLocation" class="com.pac.beans.GeoLocation"
+		c:xCoordinate="93" c:yCoordinate="49" />
+
+	<bean id="address" class="com.pac.beans.Address"
+		p:addressLine1="505" p:addressLine2="Mithrivanam" p:state="TS"
+		p:city="hyd" p:zip="394" p:country="India"
+		p:geoLocation-ref="geoLocation" />
+</beans>

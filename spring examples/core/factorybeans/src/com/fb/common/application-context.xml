@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="reminder" class="com.fb.beans.Reminder">
+		<property name="notes" value="Team Sync-up Meeting" />
+		<property name="schedule" ref="calendar" />
+		<property name="snooze" value="true" />
+	</bean>
+	<bean id="calendar" class="com.fb.beans.CalendarFactoryBean"
+		c:day="23" c:month="3" c:year="2018" scope="prototype"/>
+</beans>

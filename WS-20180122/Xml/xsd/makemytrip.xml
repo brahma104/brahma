@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booking-confirmation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/work/master/webservices/20180125/Xml/xsd/makemytrip.xsd">
+	<transaction-no>t93</transaction-no>
+	<transaction-date>2018-03-31</transaction-date>
+	<tickets>
+		<bus-ticket>
+			<source>hyderbad</source>
+			<destination>banglore</destination>
+			<journey-date>2018-04-30</journey-date>
+			<reservation-type>Volvo Ac</reservation-type>
+			<amount>2000</amount>
+			<bus-no>b93</bus-no>
+			<seat-no>22</seat-no>
+		</bus-ticket>		
+		<hotel-reservation>
+			<source>banglore</source>
+			<destination>chennai</destination>
+			<journey-date>2018-04-30</journey-date>
+			<reservation-type>luxury</reservation-type>
+			<amount>3029</amount>
+			<checkin-date>2018-05-23</checkin-date>
+			<purpose>Personal</purpose>
+			<days-of-stay>3</days-of-stay>
+			<room-no>3</room-no>
+		</hotel-reservation>
+		
+		<train-ticket>
+			<source>banglore</source>
+			<destination>chennai</destination>
+			<journey-date>2018-05-30</journey-date>
+			<reservation-type>sleeper</reservation-type>
+			<amount>2000</amount>
+			<pnr-no>39404</pnr-no>
+			<coach>s1</coach>
+			<berth>20</berth>
+		</train-ticket>
+		
+	</tickets>
+</booking-confirmation>

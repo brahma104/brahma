@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cricket" class="com.cldi.beans.Game">
+		<constructor-arg>
+			<list value-type="java.lang.String">
+				<value>2 teams should participate</value>
+				<value>11 players in each team</value>
+				<value>50 overs match</value>
+			</list>
+		</constructor-arg>
+		<property name="players">
+			<set value-type="java.lang.String">
+				<value>Sachin</value>
+				<value>Dravid</value>
+				<value>Ganguly</value>
+			</set>
+		</property>
+	</bean>
+	<bean id="iccBoard" class="com.cldi.beans.IccBoard">
+		<constructor-arg>
+			<map key-type="java.lang.String" value-type="com.cldi.beans.Game">
+				<entry key="june, 2018" value-ref="cricket" />
+			</map>
+		</constructor-arg>
+		<property name="members">
+			<props>
+				<prop key="gavaskar">executive member</prop>
+				<prop key="kapil">advisor</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

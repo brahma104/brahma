@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policy SYSTEM "D:\work\master\webservices\20180125\Xml\policy.dtd">
+<policy>
+	<insurance-details>
+		<plan-name>Jeevan Arogya</plan-name>
+		<plan-type>Risk Coverage</plan-type>
+		<description>Risk coverage plan for life</description>
+		<premium-amount>3390.34</premium-amount>
+	</insurance-details>
+	<enrollment-info>
+		<term-information>
+			<policy-no>p394</policy-no>
+			<effective-dt>01/01/2018</effective-dt>
+			<end-dt>31/12/2028</end-dt>
+			<premium-cycle>Halfyearly</premium-cycle>
+			<terms>10</terms>
+		</term-information>
+		<policy-holder>
+			<policy-holder-name>Mark</policy-holder-name>
+			<dob>01/01/1998</dob>
+			<gender>Male</gender>
+		</policy-holder>
+	</enrollment-info>
+</policy>

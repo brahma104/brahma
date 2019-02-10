@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<purchaseOrder>
+	<orderItems>
+		<item>
+			<itemCode>ic3</itemCode>
+			<quantity>abc</quantity>
+		</item>
+		<item>
+			<itemCode>ic04</itemCode>
+			<quantity>38</quantity>
+		</item>
+	</orderItems>
+	<shippingAddress>
+		<addressLine1>505, Mithrivanam</addressLine1>
+		<addressLine2>Ameerpet X-Roads</addressLine2>
+		<city>Hyderabad</city>
+		<state>TS</state>
+		<zip>39484</zip>
+		<country>India</country>
+	</shippingAddress>
+</purchaseOrder>

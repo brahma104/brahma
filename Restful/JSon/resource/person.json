@@ -1,0 +1,10 @@
+{
+	"name": "Rock",
+	"age": "23",
+	"address": {
+		"addressLine1": "cross street",
+		"city": "hyderabad",
+		"state": "Telangana",
+		"country": "India"
+	}
+}

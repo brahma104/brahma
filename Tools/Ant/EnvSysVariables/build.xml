@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="EnvSysVariables" basedir="." default="print">
+	<property environment="env"/>
+	
+	<target name="print">
+		<echo>${java.vm.version}</echo>
+		<echo>${java.runtime.version}</echo>
+		<echo>${file.separator}</echo>
+		<echo>${env.JAVA_HOME}</echo>
+	</target>
+</project>

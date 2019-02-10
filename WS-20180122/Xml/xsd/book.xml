@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/work/master/webservices/20180125/Xml/xsd/book.xsd">
+	<isb>isb3</isb>
+	<title>let us c</title>
+	<category>Fiction</category>
+	<author>
+		<name>yaswanth</name>
+		<dob>1980-01-20</dob>
+	</author>
+	<publisher>
+		<name>Bpb</name>
+		<est-dt>1970-01-20</est-dt>
+	</publisher>
+</book>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:fms="http://freerecharge.in/mobile/services"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MobileManagerService"
+	targetNamespace="http://freerecharge.in/mobile/services" xmlns:fmt="http://freerecharge.in/mobile/types">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://freerecharge.in/mobile/types">
+			<xsd:element name="subscriber">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="mobileNo" type="xsd:string" />
+						<xsd:element name="providerName" type="xsd:string" />
+						<xsd:element name="subscriberType" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="paymentMethod">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="paymentType" type="xsd:string" />
+						<xsd:element name="paymentDate" type="xsd:date" />
+						<xsd:element name="amount" type="xsd:float" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="receipt">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="receiptNo" type="xsd:string" />
+						<xsd:element name="status" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="recharge">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="fmt:subscriber"  />
+						<xsd:element ref="fmt:paymentMethod"  />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="rechargeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="fmt:receipt" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MobileManager_recharge">
+		<wsdl:part name="in" element="fmt:recharge"  />
+	</wsdl:message>
+	<wsdl:message name="MobileManager_rechargeResponse">
+		<wsdl:part name="out" element="fmt:rechargeResponse" />
+	</wsdl:message>
+	<wsdl:portType name="MobileManager">
+		<wsdl:operation name="recharge">
+			<wsdl:input message="fms:MobileManager_recharge" />
+			<wsdl:output message="fms:MobileManager_rechargeResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MobileManagerSOAPBinding" type="fms:MobileManager">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="recharge">
+			<soap:operation soapAction="http://freerecharge.in/mobile/services/recharge" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MobileManagerService">
+		<wsdl:port binding="fms:MobileManagerSOAPBinding" name="MobileManagerSOAPPort">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

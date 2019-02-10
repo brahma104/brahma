@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.co.entities">
+	<class name="Bus" table="bus">
+		<id name="busNo" column="bus_no">
+			<generator class="increment" />
+		</id>
+		<property name="busType" column="bus_type" />
+		<set name="trips" cascade="save-update,delete-orphan" inverse="true" fetch="subselect" >
+			<key column="bus_no"/>
+			<one-to-many class="Trip" />
+		</set>
+	</class>
+</hibernate-mapping>

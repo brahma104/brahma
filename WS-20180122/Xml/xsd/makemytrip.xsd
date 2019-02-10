@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="booking-confirmation" type="bookingConfirmationType"/>
+	
+	<xs:group name="reservationFieldsGroup">
+		<xs:sequence>
+			<xs:element name="source" type="xs:string"/>
+			<xs:element name="destination" type="xs:string"/>
+			<xs:element name="journey-date" type="xs:date"/>
+			<xs:element name="reservation-type" type="xs:string"/>
+			<xs:element name="amount" type="xs:float"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="busTicketGroup">
+		<xs:sequence>
+			<xs:element name="bus-ticket" type="busTicketType" />
+			<xs:element name="hotel-reservation" type="hotelReservationType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="trainTicketGroup">
+		<xs:sequence>
+			<xs:element name="train-ticket" type="trainTicketType" />
+			<xs:element name="hotel-reservation" type="hotelReservationType"/>
+		</xs:sequence>
+	</xs:group>
+	
+	
+	
+	<xs:complexType name="bookingConfirmationType">
+		<xs:sequence>
+			<xs:element name="transaction-no" type="xs:string"/>
+			<xs:element name="transaction-date" type="xs:date"/>
+			<xs:element name="tickets" type="ticketsType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ticketsType">
+		<xs:all>
+			<xs:element name="bus-ticket" type="busTicketType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="train-ticket" type="trainTicketType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="hotel-reservation" type="hotelReservationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:all>		
+	</xs:complexType>
+
+	<xs:complexType name="busTicketType">
+		<xs:sequence>
+			<xs:group ref="reservationFieldsGroup"/>
+			<xs:element name="bus-no" type="xs:string"/>
+			<xs:element name="seat-no" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="trainTicketType">
+		<xs:sequence>
+			<xs:group ref="reservationFieldsGroup"/>
+			<xs:element name="pnr-no" type="xs:string"/>
+			<xs:element name="coach" type="xs:string"/>
+			<xs:element name="berth" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="hotelReservationType">
+		<xs:sequence>
+			<xs:group ref="reservationFieldsGroup"/>
+			<xs:element name="checkin-date" type="xs:date"/>
+			<xs:element name="purpose" type="xs:string"/>
+			<xs:element name="days-of-stay" type="xs:int"/>
+			<xs:element name="room-no" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

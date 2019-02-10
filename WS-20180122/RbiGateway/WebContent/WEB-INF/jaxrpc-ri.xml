@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ Copyright 2004 Sun Microsystems, Inc. All rights reserved.
+ SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<webServices
+    xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/dd"
+    version="1.0"
+    targetNamespaceBase="http://axisbank.com/netbanking/service"
+    typeNamespaceBase="http://axisbank.com/netbanking/types"
+    urlPatternBase="/rbiGateway">
+
+    <endpoint
+        name="FundsTransfer"
+        displayName="Book Information Service"
+        description="Provides the information about books" 
+        wsdl="/WEB-INF/rbiGateway.wsdl"
+        interface="com.axisbank.netbanking.service.FundsTransfer"  
+        implementation="com.axisbank.netbanking.service.FundsTransferImpl" 
+	     model="/WEB-INF/axisbank-rpc-enc.xml.gz"/>
+ 
+    <endpointMapping
+        endpointName="FundsTransfer"
+        urlPattern="/rbiGateway"/>
+
+</webServices>
+
+
+

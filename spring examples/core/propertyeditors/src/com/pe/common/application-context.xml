@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="account" class="com.pe.beans.Account">
+		<property name="accountNo" value="39" />
+		<property name="holderName" value="Susan" />
+		<property name="registeredDate" value="10/02/2018" />
+		<property name="profileImage"
+			value="C:\Oracle\Middleware\Oracle_Home\domain-registry.xml" />
+		<property name="facebookPage" value="http://www.google.co.in" />
+		<property name="interests" value="Polictics,Fashion,Movies" />
+	</bean>
+
+</beans>

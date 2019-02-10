@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<security:http auto-config="true">
+		<security:csrf disabled="true" />
+		<security:form-login login-page="/user-login.htm"
+			login-processing-url="/j-security-user-check"
+			username-parameter="j_username" password-parameter="j_password"
+			authentication-failure-handler-ref="authenticationFailureHandler" />
+		<security:logout logout-url="/user-logout"
+			invalidate-session="true" logout-success-url="/logout.htm" />
+		<security:intercept-url
+			pattern="/add-doctor.htm" access="hasAuthority('admin')" />
+	</security:http>
+
+	<bean id="userDetailsService"
+		class="com.formsec.security.service.UserDetailsServiceImpl">
+		<constructor-arg ref="userAccountDao" />
+	</bean>
+
+	<security:authentication-manager>
+		<security:authentication-provider
+			user-service-ref="userDetailsService">
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<bean id="authenticationFailureHandler"
+		class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+		<property name="exceptionMappings">
+			<props>
+				<prop
+					key="org.springframework.security.authentication.BadCredentialsException">/user-login.htm?bad</prop>
+				<prop
+					key="org.springframework.security.authentication.AccountExpiredException">/user-login.htm?expired</prop>
+				<prop
+					key="org.springframework.security.authentication.LockedException">/user-login.htm?locked</prop>
+				<prop
+					key="org.springframework.security.authentication.DisabledException">/user-login.htm?disabled</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

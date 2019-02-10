@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="purchaseOrder" type="purchaseOrderType"/>
+	<xs:complexType name="purchaseOrderType">
+		<xs:sequence>
+			<xs:element name="orderItems" type="orderItemsType"/>
+			<xs:choice>
+				<xs:element name="shippingAddress" type="shippingAddressType"/>
+				<xs:element name="usShippingAddress" type="usShippingAddressType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="orderItemsType">
+		<xs:sequence>
+			<xs:element name="item" type="itemType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="itemType">
+		<xs:sequence>
+			<xs:element name="itemCode" type="xs:string"/>
+			<xs:element name="quantity" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="shippingAddressType">
+		<xs:sequence>
+			<xs:element name="addressLine1" type="addressLine1Type"/>
+			<xs:element name="addressLine2" type="xs:string"/>
+			<xs:element name="city" type="cityType"/>
+			<xs:element name="state" type="xs:string"/>
+			<xs:element name="zip" type="zipType"/>
+			<xs:element name="country" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="addressType" type="addressEnumType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="usShippingAddressType">
+		<xs:complexContent>
+			<xs:extension base="shippingAddressType">
+				<xs:sequence>
+					<xs:element name="county" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="zipType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="addressEnumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="permanent"/>
+			<xs:enumeration value="temporary"/>
+		</xs:restriction>	
+	</xs:simpleType>
+	
+	<xs:complexType name="addressLine1Type">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="landmark" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="cityType">
+		<xs:simpleContent>
+			<xs:extension base="cityEnumType">
+				<xs:attribute name="zone" type="zoneEnumType" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="zoneEnumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="east"/>
+			<xs:enumeration value="west"/>
+			<xs:enumeration value="south"/>
+			<xs:enumeration value="north"/>
+		</xs:restriction>	
+	</xs:simpleType>
+	<xs:simpleType name="cityEnumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Hyderabad"/>
+			<xs:enumeration value="Banglore"/>
+			<xs:enumeration value="Chennai"/>
+		</xs:restriction>	
+	</xs:simpleType>
+</xs:schema>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT sbi-bank (accounts, lockers)>
+<!ELEMENT accounts (account+)>
+<!ELEMENT account (account-holder-name, balance)>
+<!ATTLIST account accountNo ID #REQUIRED>
+<!ATTLIST account account-type CDATA #FIXED "savings">
+<!ATTLIST account nominee NMTOKEN #REQUIRED>
+<!ELEMENT account-holder-name (#PCDATA)>
+<!ELEMENT balance (#PCDATA)>
+<!ELEMENT lockers (locker+)>
+<!ELEMENT locker (alloted-date, alloted-to, capacity, charges)>
+<!ATTLIST locker lockerNo ID #REQUIRED>
+<!ATTLIST locker refAccountNo IDREF #REQUIRED>
+<!ELEMENT alloted-date (#PCDATA)>
+<!ELEMENT alloted-to (#PCDATA)>
+<!ELEMENT capacity (#PCDATA)>
+<!ELEMENT charges (#PCDATA)>

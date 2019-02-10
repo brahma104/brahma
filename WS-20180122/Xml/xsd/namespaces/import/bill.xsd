@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:kf="http://karvy.com/finance/types" targetNamespace="http://karvy.com/finance/types" elementFormDefault="qualified">
+	<xs:element name="bill" type="kf:billType"/>
+	<xs:complexType name="billType">
+		<xs:sequence>
+			<xs:element name="bill-no" type="xs:string"/>
+			<xs:element name="bill-date" type="xs:date"/>
+			<xs:element name="amount" type="xs:float"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

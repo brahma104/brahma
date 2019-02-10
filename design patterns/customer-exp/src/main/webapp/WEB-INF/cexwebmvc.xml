@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fwc:fireweb-config
+	xmlns:fwc="http://www.fireweb.org/web/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.fireweb.org/web/config ../../../../../fireweb-mvc/src/main/resources/META-INF/fireweb-config.xsd ">
+	<fwc:handlers>
+		<fwc:handler path="/feedbackhandler.action"
+			handlerClass="com.cex.handler.FeedbackHandler">
+			<fwc:forward name="feedback-success"
+				page="/feedback-success.jsp"></fwc:forward>
+		</fwc:handler>
+	</fwc:handlers>
+</fwc:fireweb-config>

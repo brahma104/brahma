@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT mail (to, from, subject, body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT body (#PCDATA | attachment | mime-type)*>
+<!ELEMENT attachment (#PCDATA)>
+<!ELEMENT mime-type (#PCDATA)>

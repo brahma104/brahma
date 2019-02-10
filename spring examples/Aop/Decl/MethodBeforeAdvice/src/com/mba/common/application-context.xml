@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+	<bean id="loanManager" class="com.mba.beans.LoanManager" />
+	<bean id="securityManager" class="com.mba.helper.SecurityManager"
+		factory-method="getInstance" />
+	<bean id="auditAspect"
+		class="com.mba.aspect.SecurityMonitoringAspect">
+		<constructor-arg ref="securityManager" />
+	</bean>
+
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.mba.beans.*.*(..))"
+			id="securityMonitoringPointcut" />
+		<aop:aspect ref="auditAspect">
+			<aop:before method="audit"
+				pointcut-ref="securityMonitoringPointcut" />
+			<aop:before method="securityCheck"
+				pointcut-ref="securityMonitoringPointcut" />
+		</aop:aspect>
+
+	</aop:config>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

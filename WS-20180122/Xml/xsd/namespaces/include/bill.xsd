@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://bigbazar.com/shopping/types" xmlns:bs="http://bigbazar.com/shopping/types">
+	
+	<xs:element name="bill" type="bs:billType"/>
+	<xs:complexType name="billType">
+		<xs:sequence>
+			<xs:element name="bill-no" type="xs:string"/>
+			<xs:element name="bill-date" type="xs:date"/>
+			<xs:element name="amount" type="xs:float"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

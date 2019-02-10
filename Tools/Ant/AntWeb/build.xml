@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="antweb" basedir="." default="init">
+	<property file="build.properties" />
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<condition property="isJdk1.8">
+		<equals arg1="${ant.java.version}" arg2="1.8"/>
+	</condition>
+	
+	<target name="init" depends="checkJdk,clean,mkdirs,compile,package"/>
+	<target name="checkJdk" unless="isJdk1.8">
+		<fail message="jdk 1.8 is required"/>
+	</target>
+	<target name="clean">
+		<delete dir="${dist.dir}" />
+		<delete dir="${classes.dir}" />
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="mkdirs">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" />
+	</target>
+	<target name="package">
+		<war destfile="${dist.dir}${file.separator}${ant.project.name}.war" webxml="${webinf.dir}${file.separator}web.xml">
+			<classes dir="${classes.dir}">
+			</classes>
+		</war>
+	</target>
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

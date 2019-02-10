@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ebay.in/sales/books" xmlns:es="http://ebay.in/sales/books" elementFormDefault="qualified">
+	
+	<xs:element name="book" type="es:bookType"/>
+	<xs:element name="name" type="xs:string"/>
+	<xs:complexType name="bookType">
+		<xs:sequence>
+			<xs:element name="isbn" type="xs:string"/>
+			<xs:element name="title" type="xs:string"/>
+			<xs:element name="author" type="es:authorType"/>
+			<xs:element name="publisher" type="es:publisherType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="authorType">
+		<xs:sequence>
+			<xs:element ref="es:name"/>
+			<xs:element name="dob" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="publisherType">
+		<xs:sequence>
+			<xs:element ref="es:name"/>
+			<xs:element name="est-date" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

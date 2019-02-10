@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT policy (insurance-details, enrollment-info)>
+<!ELEMENT insurance-details (plan-name, plan-type, description, premium-amount)>
+<!ELEMENT plan-name (#PCDATA)>
+<!ELEMENT plan-type (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT premium-amount (#PCDATA)>
+<!ELEMENT enrollment-info (term-information, policy-holder)>
+<!ELEMENT term-information (policy-no, effective-dt, end-dt, premium-cycle, terms)>
+<!ELEMENT policy-no (#PCDATA)>
+<!ELEMENT effective-dt (#PCDATA)>
+<!ELEMENT end-dt (#PCDATA)>
+<!ELEMENT premium-cycle (#PCDATA)>
+<!ELEMENT terms (#PCDATA)>
+<!ELEMENT policy-holder (policy-holder-name,dob,gender)>
+<!ELEMENT policy-holder-name (#PCDATA)>
+<!ELEMENT dob (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+
+
+
+
+
+
+
+
+
+
+
+

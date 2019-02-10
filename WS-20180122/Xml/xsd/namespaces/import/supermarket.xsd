@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bst="http://bigbazar.com/shopping/types" targetNamespace="http://bigbazar.com/shopping/types" elementFormDefault="qualified" xmlns:kft="http://karvy.com/finance/types">
+	<xs:import namespace="http://karvy.com/finance/types" schemaLocation="bill.xsd"/>
+	<xs:element name="super-market" type="bst:superMarketType"/>
+	<xs:complexType name="superMarketType">
+		<xs:sequence>
+			<xs:element name="super-market-name" type="xs:string"/>
+			<xs:element name="branch" type="xs:string"/>
+			<xs:element name="order-no" type="xs:string"/>
+			<xs:element name="ordered-date" type="xs:date"/>
+			<xs:element name="basket" type="bst:basketType"/>
+			<xs:element ref="kft:bill"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="basketType">
+		<xs:sequence>
+			<xs:element name="product" type="bst:productType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="productType">
+		<xs:sequence>
+			<xs:element name="product-code" type="xs:string"/>
+			<xs:element name="quantity" type="xs:int"/>
+			<xs:element name="product-type" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 May, 2018 10:53:30 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.sh.entities">
+	<class name="Block" table="blocks">
+		<id name="blockNo" column="block_no">
+			<generator class="increment" />
+		</id>
+		<property name="blockName" column="block_nm" />
+		<property name="description" />
+		<property name="units" />
+	</class>
+</hibernate-mapping>

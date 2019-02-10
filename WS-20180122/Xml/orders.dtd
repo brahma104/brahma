@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT order (products)>
+<!ELEMENT products (electronic | home-appliance | lifestyle)+>
+<!ELEMENT electronic (#PCDATA)>
+<!ELEMENT home-appliance (#PCDATA)>
+<!ELEMENT lifestyle (#PCDATA)>

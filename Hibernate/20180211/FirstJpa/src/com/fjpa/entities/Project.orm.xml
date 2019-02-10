@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entity-mappings
+	xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	<entity class="com.fjpa.entities.Project">
+		<table name="project" schema="hdb" />
+		<attributes>
+			<id name="projectNo">
+				<column name="project_no" />
+			</id>
+			<basic name="projectName">
+				<column name="project_nm" />
+			</basic>
+			<basic name="description" />
+			<basic name="duration" />
+			<basic name="domain" />
+			<basic name="clientName">
+				<column name="client_nm" />
+			</basic>
+			<basic name="projectStartDate">
+				<column name="project_start_dt" />
+			</basic>
+		</attributes>
+	</entity>
+</entity-mappings>

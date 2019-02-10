@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="uservariables" basedir="." default="init">
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}${ant.file.separator}classes" />
+	<property name="src.dir" value="src" />
+	<target name="init" depends="clean,mkdirs,compile,run"></target>
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="mkdirs">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+	</target>
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" />
+	</target>
+	<target name="run">
+		<java classname="com.uv.test.UVTest" classpath="${classes.dir}" />
+	</target>
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

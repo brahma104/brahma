@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///D:/work/master/webservices/20180125/Xml/xsd/po.xsd">
+	<orderItems>
+		<item>
+			<itemCode>ic738</itemCode>
+			<quantity>21</quantity>
+		</item>
+		<item>
+			<itemCode>ic928</itemCode>
+			<quantity>20</quantity>
+		</item>
+	</orderItems>
+	
+	<shippingAddress addressType="permanent">		
+		<addressLine1 landmark="Near Ameerpet X Roads">505, 5th floor</addressLine1>		
+		<addressLine2>Ameerpet X Roads</addressLine2>
+		<city zone="east">Banglore</city>
+		<state>TS</state>
+		<zip>1111</zip>
+		<country>India</country>		
+	</shippingAddress>
+</purchaseOrder>
+
+
+
+

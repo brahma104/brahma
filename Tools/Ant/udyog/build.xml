@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="udyog" basedir="." default="init">
+	<property file="common.properties"/>
+	<property file="build-dev.properties"/>
+	<target name="init" depends="clean,mkdirs,compile"/>
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="mkdirs">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+	</target>
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" />
+		<replace file="${src.dir}/db.properties" token="#{db.driverClassname}" value="${db.driverClassname}" />
+		<replace file="${src.dir}/db.properties" token="#{db.url}" value="${db.url}" />
+		<replace file="${src.dir}/db.properties" token="#{db.username}" value="${db.username}" />
+		<replace file="${src.dir}/db.properties" token="#{db.password}" value="${db.password}" />
+	</target>
+	<copy file="${src.dir}/db.properties" todir="${classes.dir}" />
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

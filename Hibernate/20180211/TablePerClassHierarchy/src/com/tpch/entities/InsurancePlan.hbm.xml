@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.tpch.entities">
+	<class name="InsurancePlan" table="insurance_plan"
+		discriminator-value="regular">
+		<id name="planNo" column="plan_no">
+			<generator class="increment" />
+		</id>
+		<discriminator column="plan_type" />
+		<property name="planName" column="plan_nm" />
+		<property name="minTenure" column="min_tenure" />
+		<property name="maxAge" column="max_age" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://redbus.in/partner/ticket" xmlns:rp="http://redbus.in/partner/ticket">
+	<xs:element name="redbus-ticket" type="rp:redbusTicketType"/>
+	<xs:complexType name="redbusTicketType">
+		<xs:sequence>
+			<xs:element name="transaction-no" type="xs:string"/>
+			<xs:element name="transaction-date" type="xs:date"/>
+			<xs:element name="source" type="xs:string"/>
+			<xs:element name="destination" type="xs:string"/>
+			<xs:element name="journey-date" type="xs:date"/>
+			<xs:element name="amount" type="xs:float"/>
+			<xs:element name="ticket-details" type="rp:ticketDetailsType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ticketDetailsType">
+		<xs:sequence>
+			<xs:any/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+
+
+
+
+
+
+
+
+

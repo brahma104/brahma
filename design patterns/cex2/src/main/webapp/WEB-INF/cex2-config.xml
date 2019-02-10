@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fw2c:fireweb2config
+	xmlns:fw2c="http://www.fireweb.org/web2/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.fireweb.org/web2/config ../../../../../fireweb2web/src/main/resources/META-INF/fireweb2-config.xsd ">
+	<fw2c:handler-mapping>
+		<fw2c:handlers
+			handlerClass="com.cex2.handler.FeedbackHandler"
+			path="/feedbackhandler.action">
+			<fw2c:forwards forwardName="feedback-success"
+				page="/feedback-success.jsp"></fw2c:forwards>
+		</fw2c:handlers>
+	</fw2c:handler-mapping>
+</fw2c:fireweb2config>

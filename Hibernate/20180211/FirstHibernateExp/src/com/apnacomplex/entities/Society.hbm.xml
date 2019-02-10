@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 May, 2018 10:53:30 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.apnacomplex.entities.Society" table="society">
+		<id name="societyNo" column="society_no" />
+		<property name="societyName" column="society_nm" />
+		<property name="registeredName" column="registered_nm" />
+		<property name="societyRegisteredDate" column="society_reg_date" />
+		<property name="addressLine1" column="addressLine1" />
+		<property name="addressLine2" column="addressLine2" />
+		<property name="city" column="city" />
+		<property name="state" column="state" />
+		<property name="zip" column="zip" />
+		<property name="country" column="country" />
+		<property name="mobileNo" column="mobile_nbr" />
+		<property name="emailAddress" column="email_address" />
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

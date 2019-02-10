@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bst:super-market xmlns:bst="http://bigbazar.com/shopping/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bigbazar.com/shopping/types file:///D:/work/master/webservices/20180125/Xml/xsd/namespaces/supermarket.xsd">
+	<bst:super-market-name/>
+	<bst:branch/>
+	<bst:order-no/>
+	<bst:ordered-date/>
+	<bst:basket>
+		<bst:product>
+			<bst:product-code/>
+			<bst:quantity/>
+			<bst:product-type/>
+		</bst:product>
+	</bst:basket>
+	<bst:bill>
+		<bst:bill-no/>
+		<bst:bill-date/>
+		<bst:amount/>
+	</bst:bill>
+</bst:super-market>

@@ -1,0 +1,1 @@
+goto build-dev.properties and provide the database information before running the build

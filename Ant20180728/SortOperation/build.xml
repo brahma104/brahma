@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="sortoperations" basedir="." default="init">
+	<target name="init" depends="clean,mkdirs,compile"></target>
+	<target name="clean">
+		<delete dir="build\classes"/>
+		<delete dir="build"/>
+	</target>
+	<target name="mkdirs">
+		<mkdir dir="build"/>
+		<mkdir dir="build\classes"/>
+	</target>
+	<target name="compile">
+		<javac srcdir="src" destdir="build\classes"/>
+	</target>
+</project>

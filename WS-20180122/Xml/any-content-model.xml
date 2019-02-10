@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order SYSTEM "D:\work\master\webservices\20180125\Xml\any-content-model.dtd">
+<order>
+	<products>
+		<television>32 led tv</television>
+		<refrigerator>2 door fridge</refrigerator>
+		<drone>3-d</drone>
+	</products>
+</order>

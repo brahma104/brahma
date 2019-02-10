@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE order SYSTEM "D:\work\master\webservices\20180125\Xml\orders.dtd">
+<order>
+	<products>
+		<electronic>television</electronic>
+		<electronic>930</electronic>
+		<home-appliance>35</home-appliance>
+		<lifestyle>35</lifestyle>
+		<home-appliance>35</home-appliance>
+		<electronic>53</electronic>
+	</products>
+</order>

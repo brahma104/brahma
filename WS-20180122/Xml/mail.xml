@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mail SYSTEM "D:\work\master\webservices\20180125\Xml\mixed-content-model.dtd">
+<mail>
+	<to>sam@gmail.com</to>
+	<from>susan@gmail.com</from>
+	<subject>How are you?</subject>
+	<body>
+		Am good, how are you?
+		<attachment>myprofilepic.jpg</attachment>
+		a;fdlfkjaldfsjaf
+		<mime-type>355</mime-type>
+	</body>
+</mail>

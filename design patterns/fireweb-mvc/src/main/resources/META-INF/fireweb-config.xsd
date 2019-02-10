@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.fireweb.org/web/config"
+	xmlns:fwc="http://www.fireweb.org/web/config"
+	elementFormDefault="qualified">
+	<xs:element name="fireweb-config" type="fwc:fireweb-config" />
+	<xs:complexType name="fireweb-config">
+		<xs:sequence>
+			<xs:element name="handlers" type="fwc:handlers" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="handlers">
+		<xs:sequence>
+			<xs:element name="handler" type="fwc:handler"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="handler">
+		<xs:sequence>
+			<xs:element name="forward" type="fwc:forward"
+				minOccurs="1" maxOccurs="unbounded" nillable="true"/>
+		</xs:sequence>
+		<xs:attribute name="path" type="xs:string" use="required"/>
+		<xs:attribute name="handlerClass" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="forward">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string"
+					use="required" />
+				<xs:attribute name="page" type="xs:string"
+					use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

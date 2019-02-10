@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rp:redbus-ticket xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://redbus.in/partner/ticket file:///D:/work/master/webservices/20180125/Xml/xsd/namespaces/any/redbus-ticket.xsd http://kesineni.com/travel/ticket  file:///D:/work/master/webservices/20180125/Xml/xsd/namespaces/any/kesineni-ticket.xsd" xmlns:rp="http://redbus.in/partner/ticket" xmlns:ktt="http://kesineni.com/travel/ticket">
+	<rp:transaction-no>t9494</rp:transaction-no>
+	<rp:transaction-date>2018-03-09</rp:transaction-date>
+	<rp:source>hyderabad</rp:source>
+	<rp:destination>banglore</rp:destination>
+	<rp:journey-date>2018-07-31</rp:journey-date>
+	<rp:amount>383</rp:amount>
+	<rp:ticket-details>
+		<ktt:kesineni-ticket>
+			<ktt:ticket-no>9393</ktt:ticket-no>
+			<ktt:bus-no>3</ktt:bus-no>
+			<ktt:seat-nos>34</ktt:seat-nos>
+			<ktt:passengers>1</ktt:passengers>
+		</ktt:kesineni-ticket>
+	</rp:ticket-details>
+</rp:redbus-ticket>

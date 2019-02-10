@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:irs="http://irctc.co.in/rail/services"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RailReservation"
+	targetNamespace="http://irctc.co.in/rail/services" xmlns:irt="http://irctc.co.in/rail/types">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://irctc.co.in/rail/types">
+			<xsd:element name="reservationIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="source" type="xsd:string" />
+						<xsd:element name="destination" type="xsd:string" />
+						<xsd:element name="trainNo" type="xsd:string" />
+						<xsd:element name="journeyDate" type="xsd:date" />
+						<xsd:element name="passengerName" type="xsd:string" />
+						<xsd:element name="gender" type="xsd:string" />
+						<xsd:element name="age" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Ticket">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="pnrNo" type="xsd:string" />
+						<xsd:element name="status" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="reservationFailedFault">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="errorCode" type="xsd:string" />
+						<xsd:element name="errorMessage" type="xsd:string" />
+						<xsd:element name="errorType" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="RailReservation_bookTicket">
+		<wsdl:part name="in" element="irt:reservationIn" />
+	</wsdl:message>
+	<wsdl:message name="RailReservation_bookTicketResponse">
+		<wsdl:part name="out" element="irt:Ticket" />
+	</wsdl:message>
+	<wsdl:message name="ReservationFailedFaultMessage">
+		<wsdl:part name="reservationFailedFault" element="irt:reservationFailedFault" />
+	</wsdl:message>
+	<wsdl:portType name="RailReservation">
+		<wsdl:operation name="bookTicket">
+			<wsdl:input message="irs:RailReservation_bookTicket" />
+			<wsdl:output message="irs:RailReservation_bookTicketResponse" />
+			<wsdl:fault name="reservationFailedFault" message="irs:ReservationFailedFaultMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="RailReservationSOAPBinding" type="irs:RailReservation">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="bookTicket">
+			<soap:operation soapAction="http://irctc.co.in/rail/services/bookTicket" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="reservationFailedFault">
+				<soap:fault name="reservationFailedFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="RailReservationService">
+		<wsdl:port binding="irs:RailReservationSOAPBinding" name="RailReservationSOAPPort">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
+
+
+
+
+
+
+

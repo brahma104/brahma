@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:ans="http://axisbank.com/netbanking/service"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="rbiGateway"
+	targetNamespace="http://axisbank.com/netbanking/service" xmlns:ant="http://axisbank.com/netbanking/types">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://axisbank.com/netbanking/types">
+			<xsd:complexType name="account">
+				<xsd:sequence>
+					<xsd:element name="accountNo" type="xsd:string" />
+					<xsd:element name="accountHolderName" type="xsd:string" />
+					<xsd:element name="ifscCode" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="neftDetails">
+				<xsd:sequence>
+					<xsd:element name="amount" type="xsd:float" />
+					<xsd:element name="comments" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="receipt">
+				<xsd:sequence>
+					<xsd:element name="transactionNo" type="xsd:string" />
+					<xsd:element name="status" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="fundsTransfer_neft">
+		<wsdl:part name="fromAc" type="ant:account" />
+		<wsdl:part name="toAc" type="ant:account" />
+		<wsdl:part name="neftDetails" type="ant:neftDetails" />
+	</wsdl:message>
+	<wsdl:message name="fundsTransfer_neftResponse">
+		<wsdl:part name="result" type="ant:receipt" />
+	</wsdl:message>
+	<wsdl:portType name="fundsTransfer">
+		<wsdl:operation name="neft">
+			<wsdl:input message="ans:fundsTransfer_neft" />
+			<wsdl:output message="ans:fundsTransfer_neftResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="fundsTransferSOAPBinding" type="ans:fundsTransfer">
+		<soap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="neft">
+			<soap:operation soapAction="http://axisbank.com/netbanking/service/neft" />
+			<wsdl:input>
+				<soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://axisbank.com/netbanking/service" use="encoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="http://axisbank.com/netbanking/service" use="encoded" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="rbiGatewayService">
+		<wsdl:port binding="ans:fundsTransferSOAPBinding" name="fundsTransferSOAPPort">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
+
+
+
+
+
+
+

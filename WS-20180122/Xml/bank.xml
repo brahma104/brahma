@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sbi-bank SYSTEM "D:\work\master\webservices\20180125\Xml\bank.dtd">
+<sbi-bank>
+	<accounts>
+		<account account-type="savings" accountNo="ac23" nominee="subbu">
+			<account-holder-name>Bill</account-holder-name>
+			<balance>9394</balance>
+		</account>
+		<account accountNo="ac24" nominee="sridhar">
+			<account-holder-name>Brave</account-holder-name>
+			<balance>393</balance>		
+		</account>
+	</accounts>
+	<lockers>
+		<locker lockerNo="lc1" refAccountNo="ac24">
+			<alloted-date>01/01/2018</alloted-date>
+			<alloted-to>Brave</alloted-to>
+			<capacity>100</capacity>
+			<charges>1000</charges>
+		</locker>
+	</lockers>
+</sbi-bank>

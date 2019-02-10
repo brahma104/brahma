@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ab:purchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://amazon.in/book/store/types  file:///D:/work/master/webservices/20180125/Xml/xsd/namespaces/po.xsd" xmlns:ab="http://amazon.in/book/store/types">
+	<ab:orderItems>
+		<ab:item>
+			<ab:itemCode>ic3</ab:itemCode>
+			<ab:quantity>24</ab:quantity>
+		</ab:item>
+	</ab:orderItems>
+	<ab:shippingAddress>
+		<ab:addressLine1>afd</ab:addressLine1>
+		<ab:addressLine2>af</ab:addressLine2>
+		<ab:city>safd</ab:city>
+		<ab:state>asfd</ab:state>
+		<ab:zip>25</ab:zip>
+		<ab:country>adff</ab:country>
+	</ab:shippingAddress>
+</ab:purchaseOrder>

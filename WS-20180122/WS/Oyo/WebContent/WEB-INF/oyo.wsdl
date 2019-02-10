@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions
+	xmlns:ors="http://oyo.com/reservation/services"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="oyo"
+	targetNamespace="http://oyo.com/reservation/services"
+	xmlns:ort="http://oyo.com/reservation/types">
+	<wsdl:types>
+		<xsd:schema
+			targetNamespace="http://oyo.com/reservation/types">
+			<xsd:element name="checkin">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="roomType" type="xsd:string" />
+						<xsd:element name="checkInDate" type="xsd:date" />
+						<xsd:element name="days" type="xsd:int" />
+						<xsd:element name="personName" type="xsd:string" />
+						<xsd:element name="mobileNo" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="reservation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="bookingNo" type="xsd:string" />
+						<xsd:element name="status" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="bookRoom">
+		<wsdl:part name="in" element="ort:checkin" />
+	</wsdl:message>
+	<wsdl:message name="bookRoomResponse">
+		<wsdl:part name="out" element="ort:reservation" />
+	</wsdl:message>
+	<wsdl:portType name="oyo">
+		<wsdl:operation name="bookRoom">
+			<wsdl:input message="ors:bookRoom" />
+			<wsdl:output message="ors:bookRoomResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="oyoSOAPBinding" type="ors:oyo">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="bookRoom">
+			<soap:operation
+				soapAction="http://oyo.com/reservation/services/bookRoom" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="oyo">
+		<wsdl:port binding="ors:oyoSOAPBinding" name="oyoSOAPPort">
+			<soap:address location="http://www.example.org" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT order (products)>
+<!ELEMENT products ANY>
+<!ELEMENT washing-machine (#PCDATA)>
+<!ELEMENT refrigerator (#PCDATA)>
+<!ELEMENT television (#PCDATA)>
+<!ELEMENT drone (#PCDATA)>
